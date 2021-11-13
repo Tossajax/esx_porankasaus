@@ -66,26 +66,11 @@ AddEventHandler('esx_porankasaus:puuttuu', function()
 	ESX.ShowNotification('Tarvitset poran rungon ja ohjeen!')
 end)
 
---[[Citizen.CreateThread(function()
-	while true do 
-		Wait(2)
-		local StartTime = GetGameTimer()
-		 if kasaa then
-			Citizen.Wait(2)
-			print("tt")
-			local TimeToTake = 60000 * 1.20 -- Minutes
-			local PackPercent = (GetGameTimer() - StartTime) / TimeToTake * 100
-			ESX.Game.Utils.DrawText3D(Package, "Paketoidaan... " .. math.ceil(tonumber(PackPercent)) .. "%", 0.4)
-			--Draw3DText2(-937.73, 386.53, 77.52, tostring("Kasataan... " .. math.ceil(tonumber(PackPercent)) .. "%", 0.4))
-
-		 end
-	end
-end)]]
 
 function tekstitsunmuut()
     local paska = true
     local alotusaika = GetGameTimer()
-    local karpo = Config.paskat["kasauspaikka"][1]
+    local tossaja = Config.paskat["kasauspaikka"][1]
         while paska do
 			Citizen.Wait(1)
 			local aika = 60 * 1000
@@ -93,7 +78,6 @@ function tekstitsunmuut()
             if kasausProcent <= 100 then
 				local aika = 60 * 1000
 				local kasausProcent = (GetGameTimer() - alotusaika) / aika * 1000
-            --ESX.Game.Utils.DrawText3D(karpo, "Kasataan... ~r~" .. math.ceil(tonumber(kasausProcent)) .. "%", 0.9)
 			end
         if kasausProcent >= 100 then
 			paska = false
