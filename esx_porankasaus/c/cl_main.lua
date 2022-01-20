@@ -68,8 +68,8 @@ RegisterNetEvent('esx_porankasaus:onitemit')
 AddEventHandler('esx_porankasaus:onitemit', function()
 	kasaa = true
 	ESX.ShowNotification('Alotellaas kasaus!')
-	SetEntityHeading(PlayerPedId(), 90.37) --tähä coordien vika h: 
-	SetEntityCoords(PlayerPedId(), -2949.35, 438.79, 15.26) --omat coordit sit
+	SetEntityHeading(PlayerPedId(), 0.0) --tähä coordien vika h: 
+	SetEntityCoords(PlayerPedId(), 0.0, 0.0, 0.0) --omat coordit sit
 	ExecuteCommand("e mechanic4")
 	TriggerEvent("mythic_progbar:client:progress", {
 		name = "sdasdsa",
