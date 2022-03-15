@@ -85,12 +85,9 @@ AddEventHandler('esx_porankasaus:onitemit', function()
 		},
 	}, function(status)
 		if not status then
-			kasaa = false
-			ClearPedTasks(PlayerPedId())
+			valmistatuli()
 		end
 	end)
-	Citizen.Wait(20000)
-	valmistatuli()
 	ESX.ShowNotification('Valmista tuli!')
 	ClearPedTasksImmediately(ped)
 end)
