@@ -57,8 +57,8 @@ end)
 
 
 function valmistatuli()
-	Citizen.Wait(1000)
 	TriggerServerEvent('esx_porankasaus:pora')
+	ESX.ShowNotification('Valmista tuli!')
 	ClearPedTasks(GetPlayerPed(-1))
 	paska = false
 	kasaa = false
@@ -68,12 +68,12 @@ RegisterNetEvent('esx_porankasaus:onitemit')
 AddEventHandler('esx_porankasaus:onitemit', function()
 	kasaa = true
 	ESX.ShowNotification('Alotellaas kasaus!')
-	SetEntityHeading(PlayerPedId(), 0.0) --tähä coordien vika h: 
-	SetEntityCoords(PlayerPedId(), 0.0, 0.0, 0.0) --omat coordit sit
+	SetEntityHeading(PlayerPedId(), 0.0) --tähä coordien vika h: (voit myös ottaa pois jos et halua)
+	SetEntityCoords(PlayerPedId(), 0.0, 0.0, 0.0) --omat coordit sit (voit myös ottaa pois jos et halua)
 	ExecuteCommand("e mechanic4")
 	TriggerEvent("mythic_progbar:client:progress", {
 		name = "sdasdsa",
-		duration = 20000, -- Kuinka kauan kasaa pitää vaihtaa myös alapuolella Citizen.Wait kohtaan
+		duration = 20000, 
 		label = "Kasataan poraa",
 		useWhileDead = false,
 		canCancel = false,
@@ -88,6 +88,4 @@ AddEventHandler('esx_porankasaus:onitemit', function()
 			valmistatuli()
 		end
 	end)
-	ESX.ShowNotification('Valmista tuli!')
-	ClearPedTasksImmediately(ped)
 end)
