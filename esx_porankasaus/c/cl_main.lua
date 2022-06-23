@@ -1,8 +1,8 @@
 --TOSsaja kkonaa
 
 
-local ESX 			= nil
-local PlayerData 	= {}
+local ESX = nil
+local PlayerData  = {}
 
 
 RegisterNetEvent('esx:playerLoaded')
