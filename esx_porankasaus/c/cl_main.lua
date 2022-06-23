@@ -1,8 +1,7 @@
---TOSsaja kkonaa
-
-
 local ESX = nil
 local PlayerData  = {}
+
+print("Tossaja hallitsee??!?!")
 
 
 RegisterNetEvent('esx:playerLoaded')
