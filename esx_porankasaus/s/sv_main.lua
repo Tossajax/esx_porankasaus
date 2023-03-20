@@ -3,6 +3,13 @@ ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 
+local kasaus222 = {
+    [1] = {
+        pos = vector3(0.0, 0.0, 0.0) --omat coordits
+    }
+}
+
+
 
  RegisterServerEvent('esx_porankasaus:itemcheck')
  AddEventHandler('esx_porankasaus:itemcheck', function()
@@ -25,4 +32,10 @@ AddEventHandler('esx_porankasaus:pora', function()
    local _source = source
    local xPlayer = ESX.GetPlayerFromId(source)
    xPlayer.addInventoryItem('drill', 1)
+end)
+
+RegisterNetEvent('kasaus:serverista')
+AddEventHandler('kasaus:serverista', function()
+    local _source = source
+    TriggerClientEvent('kasaus:clienttiin', _source, kasaus222)
 end)
