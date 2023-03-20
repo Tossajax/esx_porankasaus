@@ -1,5 +1,5 @@
 local ESX = nil
-
+local perse = {}
 local kasaa = false
 
 CreateThread(function()
